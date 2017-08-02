@@ -8,14 +8,21 @@ import { HeaderComponent } from './header/header.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthService } from './auth/auth.service'
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module';
+import { TournamentComponent } from './tournament/tournament.component';
+import { CreatetournamentComponent } from './tournament/createtournament/createtournament.component';
+import { TournamentListComponent } from './tournament/tournament-list/tournament-list.component'
+import { TournamentService } from './tournament/tournament.service'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    TournamentComponent,
+    CreatetournamentComponent,
+    TournamentListComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +30,7 @@ import { AppRoutingModule } from './app-routing.module'
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, TournamentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
