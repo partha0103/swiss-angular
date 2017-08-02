@@ -6,4 +6,12 @@
             <th>Winner</th>
         </tr>
     </thead>
+    <tbody>
+
+        <tr *ngFor="let tournament of tournaments">
+            <td>{{tournament.name}}</td>
+            <td>{{tournament.status}}</td>
+            <td>{{tournament.winner}}</td>
+        </tr>
+    </tbody>
 </table>

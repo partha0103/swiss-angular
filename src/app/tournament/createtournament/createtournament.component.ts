@@ -20,3 +20,4 @@ export class CreatetournamentComponent implements OnInit {
       this.tournamentService.createTournament(tour_name);
   }
 }
+

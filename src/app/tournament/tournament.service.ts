@@ -41,8 +41,9 @@ export class TournamentService implements OnInit{
             }
             )
             .subscribe(
-                (response) => {
+                (response: any[]) => {
                     console.log(response);
+                    return response;
                 }
                 )
     }
