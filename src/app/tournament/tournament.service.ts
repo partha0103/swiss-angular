@@ -29,7 +29,7 @@ export class TournamentService implements OnInit{
                 headers: new HttpHeaders().set('Authorization', this.token)
             })
             .subscribe(
-                response => {console.log("Hello")}
+                response => {}
                 );
     }
 
