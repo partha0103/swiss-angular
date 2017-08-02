@@ -5,8 +5,9 @@ import { HttpClient } from '@angular/common/http'
 
 @Injectable()
 export class AuthService implements OnInit{
-    token: string;
-    constructor(private http: HttpClient){}
+    token: string = null;
+    constructor(private http: HttpClient,
+                private router: Router){}
 
     ngOnInit(){
     }
@@ -21,7 +22,7 @@ export class AuthService implements OnInit{
             .subscribe(
                 response => {
                     this.token = response['token'];
-                    console.log(this.token);
+                    this.router.navigate(['/']);
                 }
             )
     }
@@ -36,11 +37,16 @@ export class AuthService implements OnInit{
         this.http.post(url, body)
             .subscribe(
                 response => {
-                    console.log(response);
-                },
-                error =>{
-                    console.log(error);
+                    this.router.navigate(['/signin']);
                 }
             )
+    }
+
+    getToken(){
+        return this.token;
+    }
+
+    isAuthenticated(){
+        return this.token != null;
     }
 }

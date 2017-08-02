@@ -5,8 +5,13 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a routerLink='/signup'>Register</a></li>
-                <li><a routerLink="/signin">Login</a></li>
+                <ng-template [ngIf] = "!authService.isAuthenticated()">
+                    <li><a routerLink="/signup">Register</a></li>
+                    <li><a routerLink="/signin">Login</a></li>
+                </ng-template>
+                <ng-template [ngIf] = "authService.isAuthenticated()">
+                    <li><a (click)='onLogout()'>logout</a></li>
+                </ng-template>
             </ul>
         </div>
     </div>
