@@ -9,8 +9,7 @@
     <tbody>
 
         <tr *ngFor="let tournament of tournaments">
-            <td><a [routerLink] = "['tournament/:id']"
-                    [queryParams] = "{id: tournament.id}">{{tournament.name}}</a></td>
+            <td><a [routerLink] = "['tournament', tournament.id]">{{tournament.name}}</a></td>
             <td>{{tournament.status}}</td>
             <td>{{tournament.winner}}</td>
         </tr>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ManageTournamentService } from '../manage-tournament.service'
+
 @Component({
   selector: 'app-standings',
   templateUrl: './standings.component.html',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StandingsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private manageTournamentService: ManageTournamentService) { }
 
   ngOnInit() {
+
   }
 
 }

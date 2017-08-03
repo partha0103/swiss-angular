@@ -18,7 +18,7 @@ export class  ManageTournamentService{
 
     getTournamentDetail(id: number){
         this.token = 'JWT ' + this.authService.getToken();
-        this.http.get('http://localhost:8000/tournament/all/:id',
+        return this.http.get('http://localhost:8000/tournament/all/:id',
             {
                 headers: new HttpHeaders().set('Authorization', this.token)
             })
