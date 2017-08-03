@@ -15,9 +15,12 @@ export class TournamentListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.tournamentService.getTournament()
+        .subscribe(
+          (response) => {
+            this.tournaments = response['tournaments'];
+          }
+          )
   }
 
-  getTournament(){
-      this.tournaments = this.tournamentService.showTournament();
-  }
 }

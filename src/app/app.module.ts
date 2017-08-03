@@ -19,6 +19,7 @@ import { AddPlayerComponent } from './manage-tournament/add-player/add-player.co
 import { StandingsComponent } from './manage-tournament/standings/standings.component';
 import { RoundComponent } from './manage-tournament/round/round.component';
 import { PlayerListComponent } from './manage-tournament/add-player/player-list/player-list.component'
+import { ManageTournamentService } from './manage-tournament/manage-tournament.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { PlayerListComponent } from './manage-tournament/add-player/player-list/
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [AuthService, TournamentService],
+  providers: [AuthService, TournamentService, ManageTournamentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

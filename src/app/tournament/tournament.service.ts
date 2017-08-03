@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core'
+import { OnInit, AfterContentChecked } from '@angular/core'
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
@@ -24,27 +24,24 @@ export class TournamentService implements OnInit{
         const body = {
             name
         }
-        this.http.post('http://localhost:8000/tournament',
+        this.http.post('http://localhost:8000/tournament',body,
             {
                 headers: new HttpHeaders().set('Authorization', this.token)
             })
             .subscribe(
-                response => {}
+                response => {
+                    console.log(response);
+                }
                 );
     }
 
-    showTournament(){
+    getTournament(){
         this.token = 'JWT ' + this.authService.getToken();
-        this.http.get('http://localhost:8000/tournament',
+        return this.http.get('http://localhost:8000/tournament/list',
             {
                 headers: new HttpHeaders().set('Authorization', this.token)
             }
             )
-            .subscribe(
-                (response: any[]) => {
-                    console.log(response);
-                    return response;
-                }
-                )
     }
+
 }

@@ -22,7 +22,7 @@ export class AuthService implements OnInit{
             .subscribe(
                 response => {
                     this.token = response['token'];
-                    this.router.navigate(['/']);
+                    this.router.navigate(['/home']);
                 }
             )
     }
