@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { ManageTournamentService } from '../manage-tournament.service'
 
@@ -7,7 +7,8 @@ import { ManageTournamentService } from '../manage-tournament.service'
   templateUrl: './standings.component.html',
   styleUrls: ['./standings.component.css']
 })
-export class StandingsComponent implements OnInit {
+export class StandingsComponent implements OnInit, AfterViewInit {
+  standings: any = [];
 
   constructor(private manageTournamentService: ManageTournamentService) { }
 
@@ -15,4 +16,7 @@ export class StandingsComponent implements OnInit {
 
   }
 
+  ngAfterViewInit(){
+
+  }
 }

@@ -21,14 +21,10 @@ export class  ManageTournamentService{
         return this.http.get('http://localhost:8000/tournament/all/:id',
             {
                 headers: new HttpHeaders().set('Authorization', this.token)
-            })
-            .subscribe(
-                (response) => {
-                    this.players = response['players'];
-                    this.tournament_status = response['status'];
-                    this.winner = response['winner'];
-                    this.round = response['round'];
-                }
-                )
+            });
+    }
+
+    getStandings(){
+       return "Hello";
     }
 }
